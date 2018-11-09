@@ -1,2 +1,0 @@
-nome,telefone 
-gabriel,95123512 

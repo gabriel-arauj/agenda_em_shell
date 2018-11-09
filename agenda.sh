@@ -9,7 +9,19 @@ function salvar {
 
 
 function buscar_contao {
-    echo ola
+    count=0
+    while read LINE
+    do
+        echo $LINE
+        ARRAY[$count]=$LINE
+        ((count++))
+    done < agendinha.csv
+
+    echo numero de elementos: ${#ARRAY[@]}
+    # imprime conteudo do array 
+    echo ${ARRAY[@]}
+    sleep 1
+
 }
 
 function adiçao_de_contato {
@@ -64,6 +76,7 @@ function remoção_de_contato {
 opcao=0
 while [ $opcao -eq 0 ]; do
     echo $(clear)
+    echo -e "Viva o \033[01;32mLinux\033[01;37m!" 
     echo "====== Agendinha do Gabriel ====="
     echo "|                                |"
     echo "|   1. buscar contato            |"
